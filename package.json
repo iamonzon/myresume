@@ -1,6 +1,7 @@
 {
   "name": "my-cv",
   "version": "0.1.0",
+  "homepage": "https://ivanagustinmonzon.github.io/my-cv",
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",

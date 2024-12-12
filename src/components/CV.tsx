@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const CV = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
       @media print {
@@ -12,12 +12,21 @@ const CV = () => {
         body {
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
+          color-adjust: exact;
+          background-color: white !important;
         }
         section {
           page-break-inside: avoid;
+          break-inside: avoid;
         }
         .page-break-before {
           page-break-before: always;
+          break-before: always;
+        }
+        @-moz-document url-prefix() {
+          body {
+            size: A4;
+          }
         }
       }
     `;
@@ -26,7 +35,7 @@ const CV = () => {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto p-8 bg-white text-gray-800 font-sans">
+    <div className="max-w-4xl mx-auto p-8 bg-white text-gray-800 font-sans print:bg-white">
       {/* Header Section */}
       <header className="mb-8 text-center">
         <h1 className="text-4xl font-bold mb-2">Iván Agustín Monzón</h1>
