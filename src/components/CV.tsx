@@ -135,7 +135,7 @@ const CV = () => {
         {/* Etermax & X3M */}
         <div className="mb-8">
           <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-            <h3 className="text-xl font-bold">Software Engineer, Etermax & X3M (Etermax's AdTech Division)</h3>
+            <h3 className="text-xl font-bold">Software Engineer, Etermax & X3M (Etermax's adtech division)</h3>
             <span className="text-gray-600">March 2022 - September 2023</span>
           </div>
           <p className="text-base italic mb-3">
