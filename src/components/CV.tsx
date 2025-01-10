@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react';
+import ualbertaLogo from '../images/ualberta-logo.jpeg';
+import unlpLogo from '../images/unlp-logo.jpeg';
+import datacampLogo from '../images/datacamp-logo.jpeg';
 
 const CV = () => {
 
@@ -217,6 +220,25 @@ const CV = () => {
         <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-gray-300">
           PROFESSIONAL EXPERIENCE
         </h2>
+        {/* Programate */}
+        <div className="mb-8">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+            <h3 className="text-xl font-bold">Founder, Programate PY</h3>
+            <span className="text-gray-600">October 2024 - Present</span>
+          </div>
+          <p className="text-base italic mb-3">
+            Building product for migration opportunities.
+          </p>
+          <ul className="list-disc pl-5 space-y-2 mb-3">
+            <li>Architected MVP product for migration opportunities</li>
+            <li>Researched competitors and market</li>
+            <li>Developed product roadmap</li>
+          </ul>
+          <p className="text-sm text-gray-600 pl-5">
+            Technical Environment: AWS, Scala 3, React native
+          </p>
+        </div>
+
         
         {/* Agile Engine */}
         <div className="mb-8">
@@ -321,6 +343,79 @@ const CV = () => {
           <p className="text-sm text-gray-600 pl-5">
             Technical Environment: Java 8, Spring, JMS, Hibernate, jQuery, Microstrategy, Teradata, DataStage
           </p>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section className="mb-8">
+        <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-gray-200">
+          EDUCATION & CERTIFICATIONS
+        </h2>
+        
+        <div className="space-y-6">
+          {/* University of Alberta */}
+          <div className="flex items-start space-x-4">
+            <img 
+              src={ualbertaLogo} 
+              alt="University of Alberta"
+              className="w-16 h-16 object-contain"
+            />
+            <div className="flex-1 flex flex-col md:flex-row md:justify-between md:items-baseline">
+              <div>
+                <h3 className="text-xl font-bold">University of Alberta</h3>
+                <p className="text-lg">Software Design and Architecture</p>
+              </div>
+              <span className="text-gray-600">Jul 2020</span>
+            </div>
+          </div>
+
+          {/* UNLP - BASc */}
+          <div className="flex items-start space-x-4">
+            <img 
+              src={unlpLogo} 
+              alt="UNLP"
+              className="w-16 h-16 object-contain"
+            />
+            <div className="flex-1 flex flex-col md:flex-row md:justify-between md:items-baseline">
+              <div>
+                <h3 className="text-xl font-bold">Universidad Nacional de La Plata</h3>
+                <p className="text-lg">Bachelor of Applied Science - BASc, Mathematics</p>
+              </div>
+              <span className="text-gray-600">May 2020</span>
+            </div>
+          </div>
+
+          {/* DataCamp */}
+          <div className="flex items-start space-x-4">
+            <img 
+              src={datacampLogo} 
+              alt="DataCamp"
+              className="w-16 h-16 object-contain"
+            />
+            <div className="flex-1 flex flex-col md:flex-row md:justify-between md:items-baseline">
+              <div>
+                <h3 className="text-xl font-bold">DataCamp</h3>
+                <p className="text-lg">Data Scientist with Python</p>
+              </div>
+              <span className="text-gray-600">Jul 2019</span>
+            </div>
+          </div>
+
+          {/* UNLP - BE */}
+          <div className="flex items-start space-x-4">
+            <img 
+              src={unlpLogo} 
+              alt="UNLP"
+              className="w-16 h-16 object-contain"
+            />
+            <div className="flex-1 flex flex-col md:flex-row md:justify-between md:items-baseline">
+              <div>
+                <h3 className="text-xl font-bold">Universidad Nacional de La Plata</h3>
+                <p className="text-lg">Bachelor of Engineering - BE</p>
+              </div>
+              <span className="text-gray-600">Feb 2013</span>
+            </div>
+          </div>
         </div>
       </section>
     </div>
