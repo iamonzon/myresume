@@ -1,6 +1,153 @@
 import React, { useEffect } from 'react';
 
 const CV = () => {
+
+  const TechnicalSkills = () => {
+    const skillCategories = [
+      {
+        title: "Software Development",
+        subcategories: [
+          {
+            subtitle: "Languages",
+            items: [
+              { group: "JVM", skills: "Scala (2.11-2.13, 3), Java (8+), Groovy" },
+              { group: "Web", skills: "JavaScript, TypeScript" }
+            ]
+          },
+          {
+            subtitle: "Paradigms",
+            items: [
+              "Functional Programming (TypeLevel ecosystem)",
+              "Object-Oriented Programming",
+              "Event-Driven Architecture"
+            ]
+          }
+        ]
+      },
+      {
+        title: "Web Technologies",
+        subcategories: [
+          {
+            subtitle: "Frontend Frameworks",
+            items: ["React", "Angular", "Vue.js"]
+          },
+          {
+            subtitle: "Backend Frameworks",
+            items: ["Spring", "Play", "Dropwizard"]
+          }
+        ]
+      },
+      {
+        title: "Distributed Systems",
+        subcategories: [
+          {
+            subtitle: "Message Brokers",
+            items: ["Kafka", "Redis", "JMS"]
+          },
+          {
+            subtitle: "Actor Systems",
+            items: ["Akka"]
+          }
+        ]
+      },
+      {
+        title: "Data Storage",
+        subcategories: [
+          {
+            subtitle: "Relational",
+            items: ["PostgreSQL", "MariaDB"]
+          },
+          {
+            subtitle: "NoSQL",
+            items: ["DynamoDB", "MongoDB", "DocumentDB"]
+          }
+        ]
+      }
+    ];
+
+    // Separate Cloud & Infrastructure section
+    const cloudInfrastructure = {
+      title: "Cloud & Infrastructure",
+      subcategories: [
+        {
+          subtitle: "AWS Services",
+          items: ["DocumentDB", "S3", "EC2", "ElastiCache", "CloudWatch"]
+        },
+        {
+          subtitle: "DevOps Tools",
+          items: ["Docker", "Jenkins", "Terraform", "Rancher", "GitHub"]
+        }
+      ]
+    };
+
+    return (
+      <section className="mb-8 p-6 bg-white rounded-xl shadow-sm">
+        <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-gray-200">
+          TECHNICAL SKILLS
+        </h2>
+        
+        {/* Main grid for first 4 categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          {skillCategories.map((category, idx) => (
+            <div key={idx} className="space-y-4 p-4 bg-gray-50/50 rounded-lg hover:bg-gray-50 transition-colors">
+              <h3 className="text-xl font-semibold text-gray-800">
+                {category.title}
+              </h3>
+              
+              {category.subcategories.map((subcat, subIdx) => (
+                <div key={subIdx} className="ml-4">
+                  {subcat.subtitle && (
+                    <h4 className="text-lg font-medium text-gray-700 mb-2">
+                      {subcat.subtitle}
+                    </h4>
+                  )}
+                  
+                  <ul className="list-disc ml-4 space-y-1">
+                    {subcat.items.map((item, itemIdx) => (
+                      <li key={itemIdx} className="text-gray-600">
+                        {typeof item === 'string' ? (
+                          item
+                        ) : (
+                          <span>
+                            <span className="font-medium">{item.group}:</span> {item.skills}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Full-width Cloud & Infrastructure section */}
+        <div className="mt-6 space-y-4 p-4 bg-gray-50/50 rounded-lg hover:bg-gray-50 transition-colors">
+          <h3 className="text-xl font-semibold text-gray-800">
+            {cloudInfrastructure.title}
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {cloudInfrastructure.subcategories.map((subcat, subIdx) => (
+              <div key={subIdx} className="ml-4">
+                <h4 className="text-lg font-medium text-gray-700 mb-2">
+                  {subcat.subtitle}
+                </h4>
+                <ul className="list-disc ml-4 space-y-1">
+                  {subcat.items.map((item, itemIdx) => (
+                    <li key={itemIdx} className="text-gray-600">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  };
+
   useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
@@ -58,55 +205,13 @@ const CV = () => {
           Full Stack Software Engineer with 8 years of experience architecting and building high-throughput distributed systems. 
           Specialized in functional programming with Scala and JVM ecosystems, delivering solutions that handle 60k+ QPS while 
           maintaining system reliability. Proven track record of leading technical teams and architecting complex integrations 
-          across diverse technology stacks. Passionate about polyglot development with a demonstrated ability to master new 
-          programming languages and paradigms.
+          across diverse technology stacks.
         </p>
       </section>
 
       {/* Technical Skills */}
-      <section className="mb-8">
-        <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-gray-300">
-          TECHNICAL SKILLS
-        </h2>
-        <div className="space-y-4 text-base">
-          <div>
-            <h3 className="font-semibold mb-2">Core Expertise:</h3>
-            <p>Distributed Systems Design, High-throughput Processing, Enterprise Integration Patterns</p>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold mb-2">Programming:</h3>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Functional Programming: Scala (2.11-2.13) with strong experience in TypeLevel ecosystem</li>
-              <li>Object-Oriented: Java (8+), Groovy</li>
-              <li>Frontend: JavaScript/TypeScript, React, Angular, Vue.js</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-2">Frameworks & Architecture:</h3>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Backend: Spring Framework, Akka, Dropwizard</li>
-              <li>Message Processing: Kafka, Redis, JMS</li>
-              <li>Database Systems: Cassandra, DynamoDB, MariaDB, DocumentDB</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-2">Infrastructure & DevOps:</h3>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Cloud Platforms: AWS (DocumentDB, S3, EC2, ElastiCache, CloudWatch)</li>
-              <li>CI/CD & Infrastructure: Docker, Jenkins, Terraform, Rancher, Github</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-2">Methodologies:</h3>
-            <p>Event-Driven Architecture, Microservices Design, Functional Programming Patterns, Agile Development</p>
-          </div>
-        </div>
-      </section>
-
+      <TechnicalSkills />
+      
       {/* Professional Experience */}
       <section className="page-break-before">
         <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-gray-300">
