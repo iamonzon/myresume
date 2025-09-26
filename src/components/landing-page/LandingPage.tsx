@@ -9,28 +9,28 @@ const LandingPage = () => {
 
   const TechnicalSkills = () => {
     return (
-      <section className={componentUtils.card('lg')}>
-        <h2 className={cn(typography.heading(2), componentUtils.divider('light', 'lg'))}>
+      <div className="mb-4">
+        <h2 className={cn(typography.heading(2), componentUtils.divider('light', 'sm'))}>
           {SECTION_TITLES.TECHNICAL_SKILLS}
         </h2>
-        
-        {/* Main grid for first 4 categories */}
-        <div className={cn(layout.grid(2, 'lg'), 'mb-8')}>
+
+        {/* Compact skills layout */}
+        <div className="space-y-4">
           {technicalSkills.mainCategories.map((category, idx) => (
-            <div key={idx} className={componentUtils.skillItem()}>
-              <h3 className={typography.heading(3)}>
+            <div key={idx}>
+              <h3 className={cn(typography.heading(3, 'left', 'primary'), 'mb-2')}>
                 {category.title}
               </h3>
-              
+
               {category.subcategories.map((subcat, subIdx) => (
-                <div key={subIdx} className="ml-4">
+                <div key={subIdx} className="mb-3">
                   {subcat.subtitle && (
-                    <h4 className={cn(typography.heading(4, 'left', 'accent'), 'mb-2')}>
-                      {subcat.subtitle}
+                    <h4 className={cn(typography.heading(4, 'left', 'accent'), 'mb-1')}>
+                      {subcat.subtitle}:
                     </h4>
                   )}
-                  
-                  <ul className={componentUtils.list('disc', 'normal')}>
+
+                  <ul className="ml-4 list-disc space-y-1">
                     {subcat.items.map((item, itemIdx) => (
                       <li key={itemIdx} className={typography.text('base', 'normal', 'secondary')}>
                         {typeof item === 'string' ? (
@@ -48,37 +48,7 @@ const LandingPage = () => {
             </div>
           ))}
         </div>
-
-        {/* Full-width Cloud & Infrastructure section */}
-        <div className={cn(componentUtils.skillItem(), 'mt-6')}>
-          <h3 className={typography.heading(3)}>
-            {technicalSkills.cloudInfrastructure.title}
-          </h3>
-          
-          <div className={layout.grid(2)}>
-            {technicalSkills.cloudInfrastructure.subcategories.map((subcat, subIdx) => (
-              <div key={subIdx} className="ml-4">
-                <h4 className={cn(typography.heading(4, 'left', 'accent'), 'mb-2')}>
-                  {subcat.subtitle}
-                </h4>
-                <ul className={componentUtils.list('disc', 'normal')}>
-                  {subcat.items.map((item, itemIdx) => (
-                    <li key={itemIdx} className={typography.text('base', 'normal', 'secondary')}>
-                      {typeof item === 'string' ? (
-                        item
-                      ) : (
-                        <span>
-                          <span className="font-medium">{item.group}:</span> {item.skills}
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      </div>
     );
   };
 
@@ -86,7 +56,7 @@ const LandingPage = () => {
   return (
     <div className={cn(layout.container('md'), 'bg-white text-gray-800 font-sans print:bg-white')}>
       {/* Header Section */}
-      <header className={cn(layout.section('md'), 'text-center')}>
+      <header className="mb-4 text-center">
         <h1 className={cn(typography.heading(1, 'center'), 'mb-2')}>{personalInfo.name}</h1>
         <p className={cn(typography.text('xl', 'normal', 'secondary'), 'mb-2')}>
           {personalInfo.title}
@@ -99,26 +69,26 @@ const LandingPage = () => {
       </header>
 
       {/* Professional Summary */}
-      <section className={layout.section('md')}>
+      <div className="mb-4">
         <h2 className={cn(typography.heading(2), componentUtils.divider('medium', 'sm'))}>
           {SECTION_TITLES.PROFESSIONAL_SUMMARY}
         </h2>
         <p className={cn(typography.text('base', 'normal', 'primary'), 'leading-relaxed')}>
           {professionalSummary}
         </p>
-      </section>
+      </div>
 
       {/* Technical Skills */}
       <TechnicalSkills />
       
       {/* Professional Experience */}
-      <section className="page-break-before print:break-before-page">
+      <div className="mb-4">
         <h2 className={cn(typography.heading(2), componentUtils.divider('medium', 'sm'))}>
           {SECTION_TITLES.PROFESSIONAL_EXPERIENCE}
         </h2>
-        
+
         {professionalExperience.map((exp, idx) => (
-          <div key={idx} className={layout.section('md')}>
+          <div key={idx} className="mb-6">
             <div className={cn(layout.flex('responsive', 'baseline', 'between'), 'mb-2')}>
               <h3 className={typography.heading(3)}>{exp.title}, {exp.company}</h3>
               <span className={typography.text('base', 'normal', 'secondary')}>{exp.period}</span>
@@ -126,17 +96,17 @@ const LandingPage = () => {
             <p className={cn(typography.text('base', 'normal', 'primary'), 'italic mb-3')}>
               {exp.description}
             </p>
-            
+
             {exp.roles && (
               <p className={cn(typography.text('base', 'semibold', 'primary'), 'mb-2')}>Core Achievements:</p>
             )}
-            
+
             <ul className={cn(componentUtils.list('disc', 'relaxed'), 'pl-5 mb-3')}>
               {exp.achievements.map((achievement, achievementIdx) => (
                 <li key={achievementIdx}>{achievement}</li>
               ))}
             </ul>
-            
+
             {exp.roles && (
               <div className={cn(typography.text('base', 'normal', 'primary'), 'space-y-1 mb-3 pl-5')}>
                 {exp.roles.initial && (
@@ -147,25 +117,25 @@ const LandingPage = () => {
                 )}
               </div>
             )}
-            
+
             <p className={cn(typography.text('sm', 'normal', 'secondary'), 'pl-5')}>
               Technical Environment: {exp.technicalEnvironment}
             </p>
           </div>
         ))}
-      </section>
+      </div>
 
       {/* Education Section */}
-      <section className={layout.section('md')}>
-        <h2 className={cn(typography.heading(2), componentUtils.divider('light', 'lg'))}>
+      <div className="mb-4">
+        <h2 className={cn(typography.heading(2), componentUtils.divider('light', 'sm'))}>
           {SECTION_TITLES.EDUCATION_CERTIFICATIONS}
         </h2>
-        
-        <div className="space-y-6">
+
+        <div className="space-y-4">
           {education.map((edu, idx) => (
             <div key={idx} className={cn(layout.flex('row', 'start'), 'space-x-4')}>
-              <img 
-                src={edu.logo} 
+              <img
+                src={edu.logo}
                 alt={edu.altText}
                 className="w-16 h-16 object-contain"
               />
@@ -179,7 +149,7 @@ const LandingPage = () => {
             </div>
           ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 };

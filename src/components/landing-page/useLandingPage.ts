@@ -47,7 +47,7 @@ export interface LandingPageData {
   professionalSummary: string;
   technicalSkills: {
     mainCategories: SkillCategory[];
-    cloudInfrastructure: SkillCategory;
+    // cloudInfrastructure: SkillCategory;
   };
   professionalExperience: Experience[];
   education: Education[];
@@ -60,10 +60,9 @@ export const useLandingPage = (): LandingPageData => {
     email: "ivan.agustin.monzon@gmail.com"
   };
 
-  const professionalSummary = `Full Stack Software Engineer with 8 years of experience architecting and building high-throughput distributed systems. 
-Specialized in functional programming with Scala and JVM ecosystems, delivering solutions that handle 60k+ QPS while 
-maintaining system reliability. Proven track record of leading technical teams and architecting complex integrations 
-across diverse technology stacks.`;
+  const professionalSummary = `Full Stack Software Engineer with 9+ years of experience architecting and building high-throughput distributed systems. 
+Specialized in functional programming with Fullstack experience, delivering solutions that handle 60k+ QPS while 
+maintaining system reliability. Proven track record of leading technical teams and architecting complex integrations across diverse technology stacks.`;
 
   const technicalSkills = {
     mainCategories: [
@@ -73,14 +72,20 @@ across diverse technology stacks.`;
           {
             subtitle: "Languages",
             items: [
-              { group: "JVM", skills: "Scala (2.11-2.13, 3), Java (8+), Groovy" },
-              { group: "Web", skills: "JavaScript, TypeScript" }
+              { group: "Frontend", skills: "JavaScript, Typescript" },
+              { group: "Backend", skills: "Node.js(typescript, javascript), JVM(Scala 2 and 3, Java 8+), Python" },
+              { group: "Databases", skills: "MySQL, MongoDB" },
+              { group: "Message Brokers", skills: "Kafka, RabbitMQ" },
+              { group: "Caching", skills: "Redis" },
+              { group: "Actor Systems", skills: "Akka" },
+              { group: "DevOps", skills: "Docker, Jenkins, GitHub, Graphana, Loki" },
+              { group: "Cloud", skills: "AWS (DocumentDB, S3, EC2, ElastiCache, CloudWatch)" },
             ]
           },
           {
             subtitle: "Paradigms",
             items: [
-              "Functional Programming (TypeLevel ecosystem)",
+              "Functional Programming",
               "Object-Oriented Programming",
               "Event-Driven Architecture"
             ]
@@ -96,53 +101,26 @@ across diverse technology stacks.`;
           },
           {
             subtitle: "Backend Frameworks",
-            items: ["Spring", "Play", "Dropwizard"]
+            items: ["ExpressJS", "Play", "Spring", "Flask", "Dropwizard"]
           }
         ]
       },
-      {
-        title: "Distributed Systems",
-        subcategories: [
-          {
-            subtitle: "Message Brokers",
-            items: ["Kafka", "Redis", "JMS"]
-          },
-          {
-            subtitle: "Actor Systems",
-            items: ["Akka"]
-          }
-        ]
-      },
-      {
-        title: "Data Storage",
-        subcategories: [
-          {
-            subtitle: "Relational",
-            items: ["PostgreSQL", "MariaDB"]
-          },
-          {
-            subtitle: "NoSQL",
-            items: ["DynamoDB", "MongoDB", "DocumentDB"]
-          }
-        ]
-      }
     ],
-    cloudInfrastructure: {
-      title: "Cloud & Infrastructure",
-      subcategories: [
-        {
-          subtitle: "AWS Services",
-          items: ["DocumentDB", "S3", "EC2", "ElastiCache", "CloudWatch"]
-        },
-        {
-          subtitle: "DevOps Tools",
-          items: ["Docker", "Jenkins", "Terraform", "Rancher", "GitHub"]
-        }
-      ]
-    }
   };
 
   const professionalExperience: Experience[] = [
+    {
+      title: "Senior Software Developer",
+      company: "Improving",
+      period: "February 2025 - September 2025",
+      description: "Global professional services company building custom software engineering solutions",
+      achievements: [
+        "Implemented distributed bulk operations for users",
+        "Implemented new features, reported improvements and bug fixes",
+        "Collaborated with cross-functional teams to deliver high-quality software"
+      ],
+      technicalEnvironment: "Angular, AWS, Scala 2"
+    },
     {
       title: "Founder",
       company: "Programate PY",
@@ -153,7 +131,7 @@ across diverse technology stacks.`;
         "Researched competitors and market",
         "Developed product roadmap"
       ],
-      technicalEnvironment: "AWS, Scala 3, React native"
+      technicalEnvironment: "ExpressJS, React native, Supabase, Vercel"
     },
     {
       title: "Software Engineer",
@@ -197,7 +175,7 @@ across diverse technology stacks.`;
         "Implemented event-driven architecture using Kafka, enabling real-time data processing and system integration",
         "Mentored junior developers and established coding standards, improving team productivity and code quality"
       ],
-      technicalEnvironment: "JavaScript, TypeScript, React, Scala 2.12, Redis, Kafka, Docker, CI/CD"
+      technicalEnvironment: "ExpressJS, TypeScript, React, Scala 2.12, Redis, Kafka, Docker, CI/CD"
     },
     {
       title: "Full Stack Software Developer",
