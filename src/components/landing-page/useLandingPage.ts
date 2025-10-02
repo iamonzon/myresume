@@ -60,8 +60,8 @@ export const useLandingPage = (): LandingPageData => {
     email: "ivan.agustin.monzon@gmail.com"
   };
 
-  const professionalSummary = `Full Stack Software Engineer with 9+ years of experience architecting and building high-throughput distributed systems. 
-Specialized in functional programming with Fullstack experience, delivering solutions that handle 60k+ QPS while 
+  const professionalSummary = `Backend Software Developer with 9+ years of experience architecting and building high-throughput distributed systems. 
+Specialized in functional programming with fullstack experience, delivering solutions that handle 60k+ QPS while 
 maintaining system reliability. Proven track record of leading technical teams and architecting complex integrations across diverse technology stacks.`;
 
   const technicalSkills = {
@@ -70,39 +70,22 @@ maintaining system reliability. Proven track record of leading technical teams a
         title: "Software Development",
         subcategories: [
           {
-            subtitle: "Languages",
+            subtitle: "Hands-on",
             items: [
-              { group: "Frontend", skills: "JavaScript, Typescript" },
-              { group: "Backend", skills: "Node.js(typescript, javascript), JVM(Scala 2 and 3, Java 8+), Python" },
+              { group: "Backend", skills: "JVM(Scala 2 and 3, Java 8+), Python, Node.js(typescript, javascript)" },
+              { group: "Backend Frameworks", skills: "Play, Akka, Spring, Flask, Dropwizard" },
               { group: "Databases", skills: "MySQL, MongoDB" },
               { group: "Message Brokers", skills: "Kafka, RabbitMQ" },
               { group: "Caching", skills: "Redis" },
               { group: "Actor Systems", skills: "Akka" },
-              { group: "DevOps", skills: "Docker, Jenkins, GitHub, Graphana, Loki" },
+              { group: "DevOps", skills: "Docker, Jenkins, GitHub, Grafana, Loki" },
               { group: "Cloud", skills: "AWS (DocumentDB, S3, EC2, ElastiCache, CloudWatch)" },
+              { group: "Paradigms", skills: "Functional Programming, Object-Oriented Programming" },
+              { group: "Architecture", skills: "Microservices, CQRS, Event-Driven Architecture, Domain-Driven Design" },
+              { group: "Frontend", skills: "JavaScript, Typescript" },
+              { group: "Frontend Frameworks", skills: "React, Angular, Vue.js" },
             ]
           },
-          {
-            subtitle: "Paradigms",
-            items: [
-              "Functional Programming",
-              "Object-Oriented Programming",
-              "Event-Driven Architecture"
-            ]
-          }
-        ]
-      },
-      {
-        title: "Web Technologies",
-        subcategories: [
-          {
-            subtitle: "Frontend Frameworks",
-            items: ["React", "Angular", "Vue.js"]
-          },
-          {
-            subtitle: "Backend Frameworks",
-            items: ["ExpressJS", "Play", "Spring", "Flask", "Dropwizard"]
-          }
         ]
       },
     ],
@@ -119,7 +102,7 @@ maintaining system reliability. Proven track record of leading technical teams a
         "Implemented new features, reported improvements and bug fixes",
         "Collaborated with cross-functional teams to deliver high-quality software"
       ],
-      technicalEnvironment: "Angular, AWS, Scala 2"
+      technicalEnvironment: "Angular, Scala 2, Play, Akka cluster, CQRS, Kafka, AWS,"
     },
     {
       title: "Founder",
